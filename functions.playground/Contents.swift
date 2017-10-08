@@ -83,6 +83,35 @@ if let stats = getStats(of: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) {
     print("Sum: \(stats.sum), Average: \(stats.average), Min: \(stats.min), Max: \(stats.max)")
 }
 
+/* in out parameters */
+
+var input = "This is input string"
+
+/* constants cannot be passed as inout parameter and inout parameters cannot have default value */
+
+func modifyString(_ input : inout String) {
+    input = "Input string is modified inside the function"
+}
+
+modifyString(&input)
+
+print(input) /* prints Input string is modified inside the function */
+
+/* recursive and nested functions */
+
+func factorial(of number: Int) -> Int {
+    func fact(_ acc : Int, _ n: Int) -> Int {
+        if n == 0 || n == 1 {
+            return acc
+        } else {
+            return fact(acc * n, n - 1)
+        }
+    }
+    return fact(1, number)
+}
+
+print(factorial(of: 5))
+
 /* higher order function - functions that take other functions as parameters and returns function */
 
 func calculate(operation: (Int, Int) -> Int, operand1 : Int, operand2: Int) -> Int {
