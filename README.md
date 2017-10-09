@@ -12,3 +12,4 @@ Swift sample programs - Playgrounds
 * Control Statements
 * Loops
 * Functions
+* Closures
