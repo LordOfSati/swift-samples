@@ -13,3 +13,4 @@ Swift sample programs - Playgrounds
 * Loops
 * Functions
 * Closures
+* Enumerations
